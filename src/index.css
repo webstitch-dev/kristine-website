@@ -1,0 +1,26 @@
+html,body,#root {
+  margin: 0;
+  padding: 0;
+  /* background-color: #1D1C1F; */
+  overflow-x: hidden;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+}
+
+main {
+  flex: 1;
+}
+
+
+/* @font-face {
+  font-family: 'Reem Kufi Ink';
+  src: url('./assets/files/fonts/ReemKufiInk-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+} */
+
+

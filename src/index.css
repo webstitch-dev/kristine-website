@@ -1,7 +1,7 @@
-html,body,#root {
+* {
   margin: 0;
   padding: 0;
-  /* background-color: #1D1C1F; */
+  box-sizing: border-box;
   overflow-x: hidden;
 }
 
@@ -16,11 +16,19 @@ main {
 }
 
 
-/* @font-face {
-  font-family: 'Reem Kufi Ink';
-  src: url('./assets/files/fonts/ReemKufiInk-Regular.ttf') format('truetype');
+@font-face {
+  font-family: 'Tenor Sans';
+  src: url('/fonts/Tenor-Sans.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-} */
+}
+
+@font-face {
+  font-family: 'Marcellus';
+  src: url('/fonts/Marcellus.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 

@@ -1,11 +1,12 @@
 import '../styles/Home.css';
+import Hero from '../components/Hero';
 
 function Home() {
   return (
     <div className="home-container">
-      <h1>Kristine's Website</h1>
+      <Hero />
     </div>
-  )
+  );
 }
 
 export default Home;

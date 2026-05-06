@@ -1,4 +1,5 @@
 import '../styles/Hero.css';
+import crystalImage from '../assets/images/hero-crystal.png';
 
 function Hero() {
   return (
@@ -18,7 +19,7 @@ function Hero() {
             <h2 className="crystal-name">Carnelian</h2>
 
             <img
-                src="/assets/hero-crystal.png"
+                src={crystalImage}
                 alt="Carnelian crystal"
                 className="crystal-image"
             />

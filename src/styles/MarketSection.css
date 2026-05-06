@@ -1,0 +1,130 @@
+.market-container {
+    background-color: black;
+    width: 100%;
+    min-height: 800px;
+    padding: 50px;  
+    font-family: 'Tenor Sans', sans-serif;
+}
+
+#market-header {
+    padding: 20px;
+    font-size: 1.5em;
+    color: white;
+    text-align: center;
+}
+
+.trigger-line {
+    width: 2px;
+    height: 0;            
+    background-color: #fff;
+    margin: 0 auto;
+    transition: height 1.5s ease;  
+    position: relative;
+}
+  
+.trigger-line.visible {
+    height: 20vh;          
+}
+
+.trigger-line::before,
+.trigger-line::after {
+  content: '';
+  position: absolute;
+  bottom: 0;        
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+}
+
+.trigger-line::before {
+    right: 50%;        
+  }
+  
+  .trigger-line::after {
+    left: 50%;            
+  }
+  
+.trigger-line.visible::before,
+.trigger-line.visible::after {
+    width: 32.5vw;     
+    transition: width 0.8s ease;
+    transition-delay: 1.5s; 
+}
+
+  .arm-left,
+  .arm-right {
+    position: absolute;
+    top: 20vh;
+    width: 2px;
+    height: 0;
+    background-color: #fff;
+    transition: height 0.8s ease;
+    transition-delay: 2.3s; 
+  }
+  
+  .arm-left {
+    right: calc(32.5vw - 1px);
+  }
+  
+  .arm-right {
+    left: calc(32.5vw - 1px);
+  }
+  .trigger-line.visible .arm-left,
+  .trigger-line.visible .arm-right {
+    height: 50vh; 
+  }
+
+  .columns-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    color: white;
+    padding-top: 30px;
+  }
+  
+  .column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  /* left-aligns text within each column */
+    gap: 50px;
+  }
+  
+  .column-title {
+    margin-bottom: 10px;
+    padding: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.502);  
+    width: 100%;
+    text-align: center;
+  }
+  
+  .column p {
+    font-size: 1em;
+    margin: 0;
+    letter-spacing: .5px;
+  }
+
+
+  .column-title, .row-1, .row-2, .row-3 {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+  }
+
+  .column-title.fade-in {
+    opacity: 1;
+    transition-delay: 0s;  
+  }
+  
+  .row-1.fade-in {
+    opacity: 1;
+    transition-delay: 0.4s;
+  }
+  
+  .row-2.fade-in {
+    opacity: 1;
+    transition-delay: 0.8s;
+  }
+  
+  .row-3.fade-in {
+    opacity: 1;
+    transition-delay: 1.2s;
+  }

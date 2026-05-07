@@ -18,7 +18,7 @@
     height: 0;            
     background-color: #fff;
     margin: 0 auto;
-    transition: height 1.5s ease;  
+    transition: height 1s ease;  
     position: relative;
 }
   
@@ -47,8 +47,8 @@
 .trigger-line.visible::before,
 .trigger-line.visible::after {
     width: 32.5vw;     
-    transition: width 0.8s ease;
-    transition-delay: 1.5s; 
+    transition: width 1s ease;
+    transition-delay: 1s; 
 }
 
   .arm-left,
@@ -58,7 +58,7 @@
     width: 2px;
     height: 0;
     background-color: #fff;
-    transition: height 0.8s ease;
+    transition: height 1.5s ease;
     transition-delay: 2.3s; 
   }
   
@@ -80,6 +80,9 @@
     justify-content: space-evenly;
     color: white;
     padding-top: 30px;
+    width: 65vw;  
+    margin: 0 auto;
+    /* padding:20px; */
   }
   
   .column {
@@ -87,6 +90,10 @@
     flex-direction: column;
     align-items: flex-start;  /* left-aligns text within each column */
     gap: 50px;
+  }
+
+  .row {
+    padding: 10px;
   }
   
   .column-title {

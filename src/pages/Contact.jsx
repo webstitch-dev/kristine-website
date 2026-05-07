@@ -1,6 +1,44 @@
 import '../styles/Contact.css';
+import emailjs, { send } from '@emailjs/browser';
+import {useState, useRef} from 'react';
 
 const Contact = () => {
+    const [isSubmitted, setIsSubmitted] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
+    const form = useRef(null); 
+
+    const sendEmails = (e) => {
+        e.preventDefault();
+      
+        //send email to kristine
+        emailjs.sendForm(
+        //   'service_6mjsmhn',
+        //   'template_q8lhcgq',
+          form.current,
+        //   'KKC9Gvu4hrfwlZbHq'
+        ).then((result) => {
+            console.log('Email was received:', result.text);
+            setIsSubmitted(true);
+            setErrorMessage('');
+            e.target.reset();
+        }).catch((error) => {
+            console.error('Error:', error.text);
+            setIsSubmitted(false);
+            setErrorMessage('Oops! Something went wrong. Please try again.');
+        });
+
+        //send confirmation email to sender
+        emailjs.sendForm(
+        //   'service_6mjsmhn',
+        //   'template_n0n8wnb',
+          form.current,
+        //   'KKC9Gvu4hrfwlZbHq'
+        ).then(() => {
+          console.log('Confirmation email sent to their inbox');
+        }).catch((error) => {
+          console.error('Error:', error);
+        });
+    };
 
     return (
         <div className="contact-container">
@@ -8,7 +46,7 @@ const Contact = () => {
                 <p id="header-left">Let's</p>
                 <p id="header-right">Align</p>
             </div>
-            <div className="form-container">
+            <form className="form-container" ref={form} onSubmit={sendEmails}>
                 <p id="form-title">contact kristine</p>
                 <p id="form-subtitle">Please reach out with any questions or comments you might have! 
                 Feedback is always welcome!</p>
@@ -48,10 +86,12 @@ const Contact = () => {
                     </div>
 
                     <button className="submit-btn" type="submit">Send</button>
+
+                    {isSubmitted && <p className="success-msg">Message sent successfully!</p>}
+                    {errorMessage && <p className="error-msg">{errorMessage}</p>}
                     
                 </div> 
-                </div>
-                
+            </form>
         </div>
     )
 }

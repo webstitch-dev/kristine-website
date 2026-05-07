@@ -67,7 +67,7 @@
     0 0 30px rgba(255, 210, 200, 0.12),
     0 0 60px rgba(255, 200, 190, 0.06);
     opacity: 0;
-    animation: slideUp 0.8s ease-in 0.2s forwards;
+    animation: slideUp 1s ease-in .8s forwards;
 }
 
 

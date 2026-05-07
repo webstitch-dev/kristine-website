@@ -4,7 +4,6 @@ const About = () => {
 
     return (
         <div className="about-container">
-            <p>about page</p>
         </div>
     )
 }

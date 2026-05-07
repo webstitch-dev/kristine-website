@@ -5,34 +5,38 @@ import {useState, useRef} from 'react';
 const Contact = () => {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
     const form = useRef(null); 
 
     const sendEmails = (e) => {
         e.preventDefault();
+        setIsLoading(true);
       
         //send email to kristine
         emailjs.sendForm(
-        //   'service_6mjsmhn',
-        //   'template_q8lhcgq',
-          form.current,
-        //   'KKC9Gvu4hrfwlZbHq'
+            'service_pf435ao',
+            'template_b479xe7',
+            form.current,
+            'Wc3Tx2u2bObz2sSZ0',
         ).then((result) => {
             console.log('Email was received:', result.text);
             setIsSubmitted(true);
+            setIsLoading(false);
             setErrorMessage('');
             e.target.reset();
         }).catch((error) => {
             console.error('Error:', error.text);
             setIsSubmitted(false);
+            setIsLoading(false);
             setErrorMessage('Oops! Something went wrong. Please try again.');
         });
 
         //send confirmation email to sender
         emailjs.sendForm(
-        //   'service_6mjsmhn',
-        //   'template_n0n8wnb',
-          form.current,
-        //   'KKC9Gvu4hrfwlZbHq'
+            'service_pf435ao',
+            'template_xtsd7jn',
+            form.current,
+            'Wc3Tx2u2bObz2sSZ0',
         ).then(() => {
           console.log('Confirmation email sent to their inbox');
         }).catch((error) => {
@@ -87,6 +91,7 @@ const Contact = () => {
 
                     <button className="submit-btn" type="submit">Send</button>
 
+                    {isLoading && <p className="loading-msg">Sending...</p>}
                     {isSubmitted && <p className="success-msg">Message sent successfully!</p>}
                     {errorMessage && <p className="error-msg">{errorMessage}</p>}
                     

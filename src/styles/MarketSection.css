@@ -74,7 +74,7 @@
     height: 50vh; 
   }
 
-  .columns-wrapper {
+  /* .columns-wrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -82,13 +82,18 @@
     padding-top: 30px;
     width: 65vw;  
     margin: 0 auto;
-    /* padding:20px; */
   }
   
   .column {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;  /* left-aligns text within each column */
+    align-items: flex-start; 
+    gap: 30px;
+  }
+
+  .col-container{
+    display: flex;
+    flex-direction: column;
     gap: 50px;
   }
 
@@ -134,4 +139,73 @@
   .row-3.fade-in {
     opacity: 1;
     transition-delay: 1.2s;
+  } */
+
+  .markets-table {
+    width: 65vw;  
+    margin: 0 auto;
+    color: white;
+  }
+
+  .market-row {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    margin: 0 auto 20px auto;
+    text-align: center;
+    width: 95%;
+    padding: 10px;
+  }
+
+  .table-header,
+  .market-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
+  .table-header {
+    padding: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.502);  
+    width: 95%;
+    margin: 0 auto 20px auto;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    text-align: center;
+    transition-delay: 0.1s;
+  }
+
+  .table-header.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .market-row.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .market-row.row-1 { transition-delay: 0.3s; }
+  .market-row.row-2 { transition-delay: 0.5s; }
+  .market-row.row-3 { transition-delay: 0.7s; }
+  
+  @media (max-width: 767px) {
+    .table-header {
+      display: none; 
+    }
+  
+    .market-row {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 12px;
+      cursor: pointer; 
+    }
+  
+    .market-row span::before {
+      content: attr(data-label) ": ";
+      font-weight: bold;
+    }
   }

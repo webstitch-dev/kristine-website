@@ -1,4 +1,129 @@
-.about-container{
-    background-color: black;
-    height:100vh;
+.about {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 8%;
+  background: black;
+  color: #ffffff;
+  font-family: inherit;
+  gap: 80px; 
+}
+
+.about-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  width: 100%;
+}
+
+.about-left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.about-title {
+  font-family: 'Marcellus', serif;
+  font-size: 3.5rem;
+  letter-spacing: 6px;
+  margin-bottom: 10px;
+}
+
+.about-left p {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 500px;
+  color: #ffffff;
+}
+
+.about-right {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 0px;
+  object-fit: cover;
+}
+
+.crystal-section {
+  margin-top: 20px;
+  text-align: center;
+  color: #ffffff;
+  width: 100%;
+  padding: 40px 0;
+}
+
+.crystal-section-title {
+  font-size: 3.5rem;
+  margin-bottom: 40px;
+  letter-spacing: 3px;
+}
+
+.crystal-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.crystal-card {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.crystal-card img {
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+}
+
+.crystal-card h3 {
+  margin-top: 10px;
+  font-size: 2rem;
+}
+
+.crystal-card p {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .about {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .about-left,
+  .about-right {
+    width: 100%;
+  }
+
+  .about-title {
+    font-size: 2.5rem;
+  }
+
+  .about-left p {
+    margin: 0 auto;
+  }
+
+  .about-top {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .crystal-grid {
+    gap: 20px;
+  }
 }

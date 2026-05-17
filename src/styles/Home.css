@@ -1,0 +1,13 @@
+.carousel-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carousel-title {
+  font-family: inherit;
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
